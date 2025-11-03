@@ -9,11 +9,12 @@ public class PromptGenerator
         "What was the hardest part of my day?"
     };
 
+    public string _prompt;
     public string RandomPrompt()
     {
         Random random = new Random();
-        int index = random.Nexwt(_prompts.Count);
-        
-        return 
+        int index = random.Next(_prompts.Count);
+        _prompt = _prompts[index];
+        return _prompt;
     }
 }
