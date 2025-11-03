@@ -19,7 +19,9 @@ class Program
 
             if (userInput == 1)
             {
-
+                PromptGenerator e1 = new PromptGenerator();
+                Console.WriteLine(e1.RandomPrompt());
+        
             }
             else if (userInput == 2)
             {
