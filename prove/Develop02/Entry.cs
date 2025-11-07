@@ -10,5 +10,6 @@ public class Entry
         _date = DateTime.Now.ToString("MM/dd/yyyy");
         Console.WriteLine($"Date: {_date} - Prompt: {_prompt}");
         Console.WriteLine($"{_text}");
+        Console.WriteLine();
     }
 }
