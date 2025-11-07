@@ -1,9 +1,11 @@
 using System;
+using System.Xml.Linq;
 
 class Program
 {
     static void Main(string[] args)
     {
+        Journal j1 = new Journal();
         int userInput = -1;
         while (userInput != 5)
         {
@@ -19,25 +21,23 @@ class Program
 
             if (userInput == 1)
             {
-                PromptGenerator e1 = new PromptGenerator();
-                Console.WriteLine(e1.RandomPrompt());
-        
+                j1.AddEntry();
             }
             else if (userInput == 2)
             {
-
+                j1.DisplayJournal();
             }
             else if (userInput == 3)
             {
-
+                
             }
             else if (userInput == 4)
             {
-
+                
             }
             else
             {
-                
+                Environment.Exit(0);
             }
         }
     }
