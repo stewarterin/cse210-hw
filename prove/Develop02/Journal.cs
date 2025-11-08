@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
@@ -15,7 +19,7 @@ public class Journal
             _prompt = prompt,
             _text = userEntry
         };
-        
+
         _entries.Add(e1);
     }
     public void DisplayJournal()
@@ -24,5 +28,21 @@ public class Journal
         {
             entry.Display();
         }
+    }
+    public void Save()
+    {
+        Console.WriteLine("What is the filename?");
+        string filename = Console.ReadLine();
+
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine(entry);
+            }
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("Your file has been saved. ");
     }
 }
