@@ -1,5 +1,7 @@
 using System;
 using System.Xml.Linq;
+using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
@@ -9,6 +11,7 @@ class Program
         int userInput = -1;
         while (userInput != 5)
         {
+            Console.WriteLine("───────────────────────────────");
             Console.WriteLine("Welcome to the Journal Program!");
             Console.WriteLine("Please sselect one of the following choices: ");
             Console.WriteLine("1. Write");
@@ -33,7 +36,7 @@ class Program
             }
             else if (userInput == 4)
             {
-                
+                j1.Save();
             }
             else
             {
