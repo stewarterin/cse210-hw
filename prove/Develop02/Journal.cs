@@ -16,6 +16,7 @@ public class Journal
 
         Entry e1 = new Entry
         {
+            _date = DateTime.Now.ToString("MM/dd/yyyy"),
             _prompt = prompt,
             _text = userEntry
         };
@@ -38,11 +39,11 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine(entry);
+                outputFile.WriteLine($"{entry._date}, {entry._prompt}, {entry._text}");
             }
         }
 
         Console.WriteLine("");
-        Console.WriteLine("Your file has been saved. ");
+        Console.WriteLine("Your file has been saved.");
     }
 }
