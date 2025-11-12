@@ -9,35 +9,46 @@ class Program
     {
         Journal j1 = new Journal();
         int userInput = -1;
-        while (userInput != 5)
+        
+        while (userInput != 7)
         {
             Console.WriteLine("───────────────────────────────");
             Console.WriteLine("Welcome to the Journal Program!");
             Console.WriteLine("Please sselect one of the following choices: ");
             Console.WriteLine("1. Write");
-            Console.WriteLine("2. Display");
-            Console.WriteLine("3. Load");
-            Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("2. Free Write");
+            Console.WriteLine("3. Add Prompt");
+            Console.WriteLine("4. Display");
+            Console.WriteLine("5. Load");
+            Console.WriteLine("6. Save");
+            Console.WriteLine("7. Quit");
             Console.Write("What would you like to do? ");
 
             userInput = int.Parse(Console.ReadLine());
 
             Console.WriteLine("───────────────────────────────");
-            
+
             if (userInput == 1)
             {
                 j1.AddEntry();
             }
             else if (userInput == 2)
             {
-                j1.DisplayJournal();
+                j1.AddFree();
             }
             else if (userInput == 3)
             {
-                j1.Load();
+                j1.AddPrompt();
             }
             else if (userInput == 4)
+            {
+                j1.DisplayJournal();
+            }
+            else if (userInput == 5)
+            {
+                j1.Load();
+            }
+            else if (userInput == 6)
             {
                 j1.Save();
             }
