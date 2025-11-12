@@ -35,7 +35,7 @@ class Program
             }
             else if (userInput == 3)
             {
-                
+                j1.Load();
             }
             else if (userInput == 4)
             {
