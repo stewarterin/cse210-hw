@@ -20,8 +20,11 @@ class Program
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
+
             userInput = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("───────────────────────────────");
+            
             if (userInput == 1)
             {
                 j1.AddEntry();
