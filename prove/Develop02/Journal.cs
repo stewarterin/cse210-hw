@@ -5,9 +5,10 @@ using System.IO;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
+    PromptGenerator p1 = new PromptGenerator();
+
     public void AddEntry()
     {
-        PromptGenerator p1 = new PromptGenerator();
         string prompt = p1.RandomPrompt();
 
         Console.WriteLine($"{prompt}");
@@ -23,6 +24,36 @@ public class Journal
 
         _entries.Add(e1);
     }
+
+    public void AddFree()
+    {
+        string prompt = "Free Writing";
+
+        Console.WriteLine($"{prompt}");
+        Console.Write("> ");
+        string userEntry = Console.ReadLine();
+        
+        Entry e1 = new Entry
+        {
+            _date = DateTime.Now.ToString("MM/dd/yyyy"),
+            _prompt = prompt,
+            _text = userEntry
+        };
+
+        _entries.Add(e1);
+    }
+
+    public void AddPrompt()
+    {
+        Console.WriteLine("Please enter your prompt: ");
+        string _userPrompt = Console.ReadLine();
+
+        p1.UserPrompt(_userPrompt);
+
+        Console.WriteLine("");
+        Console.WriteLine("Your prompt has been added.");
+    }
+
     public void DisplayJournal()
     {
         foreach (Entry entry in _entries)
@@ -30,6 +61,7 @@ public class Journal
             entry.Display();
         }
     }
+
     public void Save()
     {
         Console.WriteLine("What is the filename?");
