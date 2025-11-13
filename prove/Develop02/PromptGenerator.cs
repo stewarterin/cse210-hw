@@ -13,11 +13,17 @@ public class PromptGenerator
     };
 
     public string _prompt;
+    
     public string RandomPrompt()
     {
         Random random = new Random();
         int index = random.Next(_prompts.Count);
         _prompt = _prompts[index];
         return _prompt;
+    }
+
+    public void UserPrompt(string _userPrompt)
+    {
+        _prompts.Add(_userPrompt);
     }
 }
