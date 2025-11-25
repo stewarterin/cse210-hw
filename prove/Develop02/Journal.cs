@@ -5,24 +5,24 @@ using System.IO;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
-    PromptGenerator p1 = new PromptGenerator();
+    PromptGenerator _newPrompt = new PromptGenerator();
 
     public void AddEntry()
     {
-        string prompt = p1.RandomPrompt();
+        string prompt = _newPrompt.RandomPrompt();
 
         Console.WriteLine($"{prompt}");
         Console.Write("> ");
         string userEntry = Console.ReadLine();
 
-        Entry e1 = new Entry
+        Entry _newEntry = new Entry
         {
             _date = DateTime.Now.ToString("MM/dd/yyyy"),
             _prompt = prompt,
             _text = userEntry
         };
 
-        _entries.Add(e1);
+        _entries.Add(_newEntry);
     }
 
     public void AddFree()
@@ -33,14 +33,14 @@ public class Journal
         Console.Write("> ");
         string userEntry = Console.ReadLine();
         
-        Entry e1 = new Entry
+        Entry _newEntry = new Entry
         {
             _date = DateTime.Now.ToString("MM/dd/yyyy"),
             _prompt = prompt,
             _text = userEntry
         };
 
-        _entries.Add(e1);
+        _entries.Add(_newEntry);
     }
 
     public void AddPrompt()
@@ -48,7 +48,7 @@ public class Journal
         Console.WriteLine("Please enter your prompt: ");
         string _userPrompt = Console.ReadLine();
 
-        p1.UserPrompt(_userPrompt);
+        _newPrompt.UserPrompt(_userPrompt);
 
         Console.WriteLine("");
         Console.WriteLine("Your prompt has been added.");
