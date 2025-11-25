@@ -1,3 +1,7 @@
+//To show creativity and exceed the core requirements,
+//I added an option for the user to do a "free write" without a prompt.
+//I also added an option for the user to add their own prompt to the list of prompts.
+
 using System;
 using System.Xml.Linq;
 using System.Collections.Generic;
