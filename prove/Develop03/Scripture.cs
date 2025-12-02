@@ -8,4 +8,18 @@ public class Scripture
         
     }
 
+    public void GetText()
+    {
+        
+    } 
+
+    public bool IsCompletelyHidden()
+    {
+        
+    }
+
+    public string DisplayText()
+    {
+        
+    }
 }
