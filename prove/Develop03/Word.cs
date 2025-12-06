@@ -7,7 +7,7 @@ public class Word
     public Word(string word)
     {
         _word = word;
-       // _hidden = ;
+       _hidden = false;
     }
     
     public void Hide()
@@ -19,7 +19,7 @@ public class Word
     {
         if (_hidden == true)
         {
-            return ("_____");
+            return new string ('_', _word.Length);
         }
         else
         {
@@ -27,10 +27,10 @@ public class Word
         }
     }
 
-    // public bool IsHidden()
-    // {
-    //     return ;
-    // }
+    public bool IsHidden()
+    {
+        return _hidden;
+    }
 
     public string GetWord()
     {
