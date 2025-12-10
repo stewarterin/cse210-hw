@@ -20,11 +20,13 @@ class Program
 
         if (userInput == 1)
             {
-                
+                Activity a1 = new Activity();
+                a1.DisplaySpinner();
             }
         else if (userInput == 2)
             {
-                
+                Activity a2 = new Activity();
+                a2.DisplayCountdown(5);
             }
         else if (userInput == 3)
             {
