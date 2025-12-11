@@ -20,13 +20,16 @@ class Program
 
         if (userInput == 1)
             {
-                Activity a1 = new Activity();
-                a1.DisplaySpinner();
+                // Activity a1 = new Activity();
+                // a1.DisplaySpinner();
+
+                BreathingActivity b1 = new BreathingActivity();
+                b1.RunBreathing();
             }
         else if (userInput == 2)
             {
-                Activity a2 = new Activity();
-                a2.DisplayCountdown(5);
+                // Activity a2 = new Activity();
+                // a2.DisplayCountdown(5);
             }
         else if (userInput == 3)
             {
