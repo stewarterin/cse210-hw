@@ -1,4 +1,4 @@
-public class ListingActivity
+public class ListingActivity : Activity
 {
     private List<string> _prompts = new List<string>
     {
@@ -9,7 +9,8 @@ public class ListingActivity
 
     public ListingActivity()
     {
-        
+        _activityName = "Listing Activity";
+        _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
     }
 
     public void RunListing()
@@ -22,8 +23,8 @@ public class ListingActivity
         
     }
 
-    public List<string> GetUserList()
-    {
-        return ;
-    }
+    // public List<string> GetUserList()
+    // {
+    //     return ;
+    // }
 }

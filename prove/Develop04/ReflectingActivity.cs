@@ -1,4 +1,4 @@
-public class ReflectingActivity
+public class ReflectingActivity : Activity
 {
     private List<string> _prompts = new List<string>
     {
@@ -17,7 +17,8 @@ public class ReflectingActivity
 
     public ReflectingActivity()
     {
-        
+        _activityName = "Reflecting Activity";
+        _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
     }
 
     public void RunReflecting()
@@ -25,15 +26,15 @@ public class ReflectingActivity
         
     }
 
-    public string GetRandomPrompt()
-    {
-        return ;
-    }
+    // public string GetRandomPrompt()
+    // {
+    //     return ;
+    // }
 
-    public string GetRandomQuestion()
-    {
-        return ;
-    }
+    // public string GetRandomQuestion()
+    // {
+    //     return ;
+    // }
 
     public void DisplayPrompt()
     {
