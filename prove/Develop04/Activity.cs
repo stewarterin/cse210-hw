@@ -1,14 +1,12 @@
 public class Activity
 {
-    private string _activityName;
-    private string _description;
-    private int _durationSeconds;
+    protected string _activityName;
+    protected string _description;
+    protected int _durationSeconds;
 
-    public Activity(string name, string description, int seconds)
+    public Activity()
     {
-        _activityName = name;
-        _description = description;
-        _durationSeconds = seconds;
+        
     }
 
     public void DisplayStartMessage()
