@@ -4,24 +4,28 @@ public class Activity
     protected string _description;
     protected int _durationSeconds;
 
-    public Activity()
+    public Activity(string name, string description)
     {
-        
+        _activityName = name;
+        _description = description; 
     }
 
     public void DisplayStartMessage()
     {
         Console.WriteLine($"Welcome to the {_activityName}.");
         Console.WriteLine($"\n{_description}");
-        Console.WriteLine("How long, in seconds, would you like for your session?");
+        Console.Write("\nHow long, in seconds, would you like for your session? ");
         _durationSeconds = int.Parse(Console.ReadLine());
+        Console.Clear(); 
     }
 
     public void DisplayEndMessage()
     {
-        Console.WriteLine($"Well done!!");
+        Console.WriteLine($"\nWell done!!");
         DisplaySpinner();
         Console.WriteLine($"You have completed another {_durationSeconds} seconds of the {_activityName}.");
+        DisplaySpinner();
+        Console.Clear(); 
     }
 
     public void DisplaySpinner()
@@ -38,16 +42,11 @@ public class Activity
 
     public void DisplayCountdown(int seconds)
     {
-        _durationSeconds = seconds;
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(seconds);
-        
-        while (DateTime.Now < endTime)
+        for (int i = seconds; i > 0; i--)
         {
-            Console.Write($"{_durationSeconds}");
-            Console.Write("\b");
+            Console.Write(i);
             Thread.Sleep(1000);
-            _durationSeconds--;
+            Console.Write("\b \b");
         }
     }
 }
