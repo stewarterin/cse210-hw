@@ -22,22 +22,21 @@ public class Activity
     public void DisplayEndMessage()
     {
         Console.WriteLine($"\nWell done!!");
-        DisplaySpinner();
+        DisplaySpinner(7);
         Console.WriteLine($"You have completed another {_durationSeconds} seconds of the {_activityName}.");
-        DisplaySpinner();
+        DisplaySpinner(7);
         Console.Clear(); 
     }
 
-    public void DisplaySpinner()
+    public void DisplaySpinner(int seconds)
     {
-        for (int i = 0; i < 7; i++)
+        for (int i = seconds; i > 0; i--)
             {
                 Console.Write(". ");
-
                 Thread.Sleep(500);
             }
 
-        Console.WriteLine("\b \b \b \b");  
+            Console.WriteLine("\b \b"); 
     }
 
     public void DisplayCountdown(int seconds)
