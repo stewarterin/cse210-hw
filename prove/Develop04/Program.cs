@@ -30,6 +30,9 @@ class Program
             {
                 // Activity a2 = new Activity();
                 // a2.DisplayCountdown(5);
+
+                ReflectingActivity r1 = new ReflectingActivity();
+                r1.RunReflecting();
             }
         else if (userInput == 3)
             {
