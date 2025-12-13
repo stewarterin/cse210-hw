@@ -1,3 +1,8 @@
+//To show creativity and exceed the core requirements, 
+//I added another menu option (option 4). This option 
+//lets the computer randomly selects and runs one of the 
+//mindfulness activities.
+
 using System;
 
 class Program
@@ -6,31 +11,26 @@ class Program
     {
         int userInput = -1;
 
-        while (userInput != 4)
+        while (userInput != 5)
         {
         Console.WriteLine("Welcome to the Mindfulness Program!");
         Console.WriteLine("Menu Options:");
         Console.WriteLine("1. Start breathing activity");
         Console.WriteLine("2. Start reflecting activity");
         Console.WriteLine("3. Start listing activity");
-        Console.WriteLine("4. Quit");
+        Console.WriteLine("4. Select random activity");
+        Console.WriteLine("5. Quit");
         Console.Write("Select a choice from the menu: ");
 
         userInput = int.Parse(Console.ReadLine());
 
         if (userInput == 1)
             {
-                // Activity a1 = new Activity();
-                // a1.DisplaySpinner();
-
                 BreathingActivity b1 = new BreathingActivity();
                 b1.RunBreathing();
             }
         else if (userInput == 2)
             {
-                // Activity a2 = new Activity();
-                // a2.DisplayCountdown(5);
-
                 ReflectingActivity r1 = new ReflectingActivity();
                 r1.RunReflecting();
             }
@@ -38,8 +38,13 @@ class Program
             {
                 ListingActivity s1 = new ListingActivity();
                 s1.RunListing();
+            }   
+        else if (userInput == 4)
+            {
+                RandomActivity n1 = new RandomActivity();
+                n1.RunRandomActivity();
             }
-        else
+        else 
             {
                 Environment.Exit(0);
             }
