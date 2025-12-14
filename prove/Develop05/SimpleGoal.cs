@@ -2,9 +2,9 @@ public class SimpleGoal : Goal
 {
     private bool _complete;
 
-    public SimpleGoal(bool complete) : base(name, description, points)
+    public SimpleGoal(string name, string description, int points, bool complete) : base(name, description, points)
     {
-        
+        _complete = complete;
     }
 
     public override void GetGoal()
