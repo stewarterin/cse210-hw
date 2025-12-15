@@ -1,4 +1,6 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 public class GoalTracker
 {
@@ -53,7 +55,30 @@ public class GoalTracker
 
     public void SaveGoals()
     {
-        
+        Console.WriteLine("What is the filename for the goal file?");
+        string filename = Console.ReadLine();
+
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            foreach (Goal goal in _goals)
+            {
+                if (goal is SimpleGoal s)
+                {
+                    outputFile.WriteLine($"{s._goalName}~~{s._description}~~{s._points}~~{s._complete}");
+                }
+                else if (goal is EternalGoal e)
+                {
+                    outputFile.WriteLine($"{e._goalName}~~{e._description}~~{e._points}~~{e._complete}");
+                }
+                else if (goal is ChecklistGoal c)
+                {
+                    outputFile.WriteLine($"{c._goalName}~~{c._description}~~{c._points}~~{c._complete}~~{c._numberCompleted}~~{c._targetCompleted}~~{c._bonusPoints}");
+                }
+            }
+        }
+
+        Console.WriteLine("");
+        Console.WriteLine("Your file has been saved.");
     }
 
     public void LoadGoals()
