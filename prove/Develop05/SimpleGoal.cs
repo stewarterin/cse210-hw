@@ -9,16 +9,24 @@ public class SimpleGoal : Goal
 
     public override void GetGoal()
     {
-        
+        if (_complete == true)
+        {
+            Console.WriteLine($"[X] {_goalName} ({_description})");
+        }
+        else
+        {
+            Console.WriteLine($"[ ] {_goalName} ({_description})");
+        }  
     }
 
     public override void RecordEvent()
     {
-        
+        _complete = true;
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
     }
 
     public override bool IsComplete()
     {
-        return ;
+        return _complete;
     }
 }

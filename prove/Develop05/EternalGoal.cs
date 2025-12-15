@@ -6,12 +6,12 @@ public class EternalGoal : Goal
 
     public override void GetGoal()
     {
-        
+        Console.WriteLine($"[ ] {_goalName} ({_description})");
     }
 
     public override void RecordEvent()
     {
-        
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
     }
 
     public override bool IsComplete()
