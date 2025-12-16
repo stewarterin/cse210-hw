@@ -63,7 +63,7 @@ public class GoalTracker
         {
             foreach (Goal goal in _goals)
             {
-                outputFile.WriteLine (goal.GetDetails());
+                outputFile.WriteLine(goal.GetDetails());
             }
         }
     }
@@ -119,7 +119,7 @@ public class GoalTracker
 
         Console.Write("Which goal did you accomplish? "); 
         
-        int goalNumber = int.Parse(Console.ReadLine());
+        int goalNumber = int.Parse(Console.ReadLine()) - 1;
         Console.WriteLine("───────────────────────────────");
 
         Goal goal = _goals[goalNumber];
