@@ -19,10 +19,11 @@ public class SimpleGoal : Goal
         }  
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _complete = true;
         Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        return _points;
     }
 
     public override bool IsComplete()

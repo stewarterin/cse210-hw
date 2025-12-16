@@ -25,7 +25,7 @@ public class ChecklistGoal : Goal
         }
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         if (_numberCompleted == (_targetCompleted - 1))
         { 
@@ -49,12 +49,17 @@ public class ChecklistGoal : Goal
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
             }
+
+            return _points + _bonusPoints;
         }
         else
         {
             _numberCompleted++;
             Console.WriteLine($"Congratulations! You have earned {_points} points!");
+
+            return _points;
         }
+
     }
 
     public override bool IsComplete()
