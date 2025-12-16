@@ -15,7 +15,7 @@ public class ChecklistGoal : Goal
 
     public override void GetGoal()
     {
-        if (_complete == true)
+        if (_numberCompleted == _targetCompleted)
         {
             Console.WriteLine($"[X] {_goalName} ({_description}) -- Currently completed: {_numberCompleted}/{_targetCompleted}");
         }
@@ -27,7 +27,7 @@ public class ChecklistGoal : Goal
 
     public override void RecordEvent()
     {
-        if (_numberCompleted == _targetCompleted)
+        if (_numberCompleted == (_targetCompleted - 1))
         { 
            Console.WriteLine($"Congratulations! You have earned {_points + _bonusPoints} points!"); 
         }
@@ -36,7 +36,6 @@ public class ChecklistGoal : Goal
             _numberCompleted++;
             Console.WriteLine($"Congratulations! You have earned {_points} points!");
         }
-        
     }
 
     public override bool IsComplete()
