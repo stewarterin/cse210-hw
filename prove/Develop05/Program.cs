@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        GoalTracker g1 = new GoalTracker();
         int userInput = -1;
 
         while (userInput !=6)
@@ -22,15 +23,34 @@ class Program
             userInput = int.Parse(Console.ReadLine());
             Console.WriteLine("───────────────────────────────");
 
-            
-
             if (userInput == 1)
             {
-                GoalTracker g1 = new GoalTracker();
                 g1.CreateNewGoal();          
             }
             else if (userInput == 2)
             {
+                g1.DisplayGoals();
+            }
+            else if (userInput == 3)
+            {
+                g1.SaveGoals();
+            }
+            else if (userInput == 4)
+            {
+                g1.LoadGoals();
+            }
+            else if (userInput == 5)
+            {
+                
+            }
+            else 
+            {
+                Environment.Exit(0);
+            }
+        }
+    }
+}
+
                 // SimpleGoal s1 = new SimpleGoal("SimpleT", "SimpleT", 10, true);
                 // s1.GetGoal();
                 // s1.RecordEvent();
@@ -60,25 +80,3 @@ class Program
                 // c2.RecordEvent();
                 // Console.WriteLine(c2.IsComplete());
                 // Console.WriteLine("____________________________");
-                
-
-            }
-            else if (userInput == 3)
-            {
-                
-            }
-            else if (userInput == 4)
-            {
-                
-            }
-            else if (userInput == 5)
-            {
-                
-            }
-            else 
-            {
-                Environment.Exit(0);
-            }
-        }
-    }
-}
