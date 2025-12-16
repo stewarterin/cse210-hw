@@ -11,11 +11,13 @@ class Program
         GoalTracker g1 = new GoalTracker();
         int userInput = -1;
 
+        Console.WriteLine("Welcome to the Eternal Quest Program!");
+
         while (userInput !=6)
         {
             Console.WriteLine("───────────────────────────────");
-            Console.WriteLine("Welcome to the Eternal Quest Program!");
-            Console.WriteLine("Menu Options:");
+            Console.WriteLine($"You have {g1._totalPoints} points.");
+            Console.WriteLine("\nMenu Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
             Console.WriteLine("3. Save Goals");
