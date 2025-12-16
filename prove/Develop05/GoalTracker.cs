@@ -107,4 +107,22 @@ public class GoalTracker
             }
         }
     }
+
+    public void Record()
+    {
+        Console.WriteLine("The goals are:");
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Console.Write($"{i + 1}. ");
+            _goals[i].GetGoal();
+        }
+
+        Console.Write("Which goal did you accomplish? "); 
+        
+        int goalNumber = int.Parse(Console.ReadLine());
+        Console.WriteLine("───────────────────────────────");
+
+        Goal goal = _goals[goalNumber];
+        goal.RecordEvent();
+    }
 }
