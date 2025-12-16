@@ -51,4 +51,9 @@ public class ChecklistGoal : Goal
         }
         
     }
+
+    public override string GetDetails()
+    {
+        return $"SimpleGoal~~{_goalName}~~{_description}~~{_points}~~{_complete}~~{_numberCompleted}~~{_targetCompleted}~~{_bonusPoints}";
+    } 
 }

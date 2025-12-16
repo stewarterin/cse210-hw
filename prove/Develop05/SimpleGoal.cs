@@ -29,4 +29,9 @@ public class SimpleGoal : Goal
     {
         return _complete;
     }
+
+    public override string GetDetails()
+    {
+        return $"SimpleGoal~~{_goalName}~~{_description}~~{_points}~~.{_complete}";
+    } 
 }

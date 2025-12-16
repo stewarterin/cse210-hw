@@ -18,4 +18,9 @@ public class EternalGoal : Goal
     {
         return false;
     }
+
+    public override string GetDetails()
+    {
+        return $"SimpleGoal~~{_goalName}~~{_description}~~{_points}~~";
+    } 
 }
