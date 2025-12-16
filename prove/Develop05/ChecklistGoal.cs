@@ -30,6 +30,25 @@ public class ChecklistGoal : Goal
         if (_numberCompleted == (_targetCompleted - 1))
         { 
            Console.WriteLine($"Congratulations! You have earned {_points + _bonusPoints} points!"); 
+                      
+           Console.Write($"That includes {_bonusPoints} bonus points! \n");
+           
+           List<string> animationString = new List<string>();
+            animationString.Add("|");
+            animationString.Add("/");
+            animationString.Add("-");
+            animationString.Add("\\");
+            animationString.Add("|");
+            animationString.Add("/");
+            animationString.Add("-");
+            animationString.Add("\\");
+
+            foreach (string s in animationString)
+            {
+                Console.Write(s);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
         }
         else
         {
