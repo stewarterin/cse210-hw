@@ -32,6 +32,6 @@ public class SimpleGoal : Goal
 
     public override string GetDetails()
     {
-        return $"SimpleGoal~~{_goalName}~~{_description}~~{_points}~~.{_complete}";
+        return $"SimpleGoal~~{_goalName}~~{_description}~~{_points}~~{_complete}";
     } 
 }

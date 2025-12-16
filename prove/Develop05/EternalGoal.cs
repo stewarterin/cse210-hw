@@ -21,6 +21,6 @@ public class EternalGoal : Goal
 
     public override string GetDetails()
     {
-        return $"SimpleGoal~~{_goalName}~~{_description}~~{_points}~~";
+        return $"EternalGoal~~{_goalName}~~{_description}~~{_points}";
     } 
 }
