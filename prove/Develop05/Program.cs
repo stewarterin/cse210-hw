@@ -41,7 +41,7 @@ class Program
             }
             else if (userInput == 5)
             {
-                
+                g1.Record();
             }
             else 
             {
