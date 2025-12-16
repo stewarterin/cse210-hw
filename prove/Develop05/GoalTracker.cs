@@ -56,32 +56,21 @@ public class GoalTracker
 
     public void SaveGoals()
     {
-        Console.WriteLine("What is the filename for the goal file?");
+        Console.Write("What is the filename for the goal file? ");
         string filename = Console.ReadLine();
 
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
             foreach (Goal goal in _goals)
             {
-                if (goal is SimpleGoal s)
-                {
-                    outputFile.WriteLine($"SimpleGoal~~{s._goalName}~~{s._description}~~{s._points}~~{s._complete}");
-                }
-                else if (goal is EternalGoal e)
-                {
-                    outputFile.WriteLine($"EternalGoal~~{e._goalName}~~{e._description}~~{e._points}");
-                }
-                else if (goal is ChecklistGoal c)
-                {
-                    outputFile.WriteLine($"ChecklistGoal~~{c._goalName}~~{c._description}~~{c._points}~~{c._complete}~~{c._numberCompleted}~~{c._targetCompleted}~~{c._bonusPoints}");
-                }
+                outputFile.WriteLine (goal.GetDetails());
             }
         }
     }
 
     public void LoadGoals()
     {
-        Console.WriteLine("What is the filename?");
+        Console.Write("What is the filename for the goal file? ");
         string filename = Console.ReadLine();
 
         string[] lines = File.ReadAllLines(filename);
