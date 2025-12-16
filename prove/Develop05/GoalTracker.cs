@@ -8,6 +8,8 @@ public class GoalTracker
     {   
     };
 
+    public int _totalPoints = 0;
+
     public void CreateNewGoal()
     {
         Console.WriteLine("The types of goals are:");
@@ -123,6 +125,8 @@ public class GoalTracker
         Console.WriteLine("───────────────────────────────");
 
         Goal goal = _goals[goalNumber];
-        goal.RecordEvent();
+
+        int newPoints = goal.RecordEvent();
+        _totalPoints += newPoints;
     }
 }
