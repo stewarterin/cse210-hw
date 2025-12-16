@@ -11,6 +11,8 @@ public abstract class Goal
         _points = points;
     }
 
+    public abstract string GetDetails();
+
     public abstract void GetGoal();
 
     public abstract void RecordEvent();
