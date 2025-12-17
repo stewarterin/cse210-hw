@@ -5,22 +5,34 @@ class Program
     static void Main(string[] args)
     {
         Reference r1 = new Reference("John", 3, 16);
-        // Console.WriteLine(r1.GetReference());
 
-        // Reference r2 = new Reference("John", 3, 16, 17);
-        // Console.WriteLine(r2.GetReference());
+        Scripture s1 = new Scripture(r1, "scripture");
+        
+        while (s1.IsCompletelyHidden() == false)
+        {
+            Console.WriteLine("Welcome to the Scripture Memorizer Program!");
+            Console.WriteLine("");
+            Console.WriteLine("John 3:16 God so loved the world that he gave his only begotten Son that whosoever believeth in him should not perish but have everlasting life.");
+            // Console.WriteLine(s1.GetText());
+            Console.WriteLine("");
+            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
 
-        Word w1 = new Word("HELLO");
-        // Console.WriteLine(w1.GetWord());
+            string userInput = Console.ReadLine();
+            if (userInput == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                s1.HideWords();
+            }
 
-        //Scripture s1 = new Scripture(reference);
+        }
 
-        Console.WriteLine("SCRIPTURE HERE");
-        Console.WriteLine("Press enter to continue or type 'quit' to finisih:");
-        Console.ReadLine();
+            Console.Clear();
 
-        Console.Clear();
+            // Console.WriteLine(s1.GetText());
+            Environment.Exit(0);
 
-        Console.WriteLine("ADJUSTED SCRIPTURE HERE");
     }
 }
