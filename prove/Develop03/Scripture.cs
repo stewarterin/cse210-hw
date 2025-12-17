@@ -39,7 +39,7 @@ public class Scripture
         
         foreach (Word word in _words)
         {
-            _text = ($"{_text}{word.Show()}");
+            _text = $"{_text}{word.Show()} ";
         }
 
         return _text;
