@@ -1,14 +1,14 @@
 public class Scripture
 {
-    private string _reference;
+    private Reference _reference;
     private List<Word> _words; 
 
-    public Scripture(string reference, string scripture)
+    public Scripture(Reference reference, string scripture)
     {
         _reference = reference;
 
-        string[] splitScripture = scripture.Split(' ');
         _words = new List<Word>();
+        string[] splitScripture = scripture.Split(" ");
         foreach (string word in splitScripture)
         {
             _words.Add(new Word(word));
@@ -17,23 +17,35 @@ public class Scripture
 
     public void HideWords()
     {
-        List<Word> showWords = new List<Word>();
+        List<Word> _showWords = new List<Word>();
 
         foreach(Word word in _words)
         {
             if (word.IsHidden() == false)
             {
-                showWords.Add(word);
+                _showWords.Add(word);
             }
         }
+
+        Random random = new Random();
+        int index = random.Next(_showWords.Count);
+        _showWords[index].Hide(); 
+
     }
 
-    public void GetText()
+    public string GetText()
     {
+        string _text = _reference.GetReference();
         
+        foreach (Word word in _words)
+        {
+            _text = ($"{_text}{word.Show()}");
+        }
+
+        return _text;
     } 
 
-    public bool IsCompletelyHidden() //Problem here. Method needs to return bool outside of the if/else loop..
+    public bool IsCompletelyHidden()
     {
         foreach (Word word in _words)
         {
@@ -41,16 +53,9 @@ public class Scripture
             {
                 return false;
             }
-            else 
-            {
-                return true;
-            }
         }
+            return true;
         
-    }
 
-    // public string DisplayText()
-    // {
-        
-    // }
+    }
 }
