@@ -5,4 +5,17 @@ public class Product
     private int _pricePerUnit;
     private int _quantity;
 
+    public Product(string name, int id, int price, int quantity)
+    {
+        _productName = name;
+        _id = id;
+        _pricePerUnit = price;
+        _quantity = quantity;
+    }
+
+    public int GetTotalCost()
+    {
+        return _pricePerUnit * _quantity;
+    }
+
 }
