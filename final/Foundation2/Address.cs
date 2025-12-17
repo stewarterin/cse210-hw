@@ -7,7 +7,7 @@ public class Address
     private string _state;
     private string _country;
 
-    Address(string street, string city, string state, string country)
+    public Address(string street, string city, string state, string country)
     {
         _street = street;
         _city = city;
@@ -17,6 +17,18 @@ public class Address
 
     public string DisplayAddress()
     {
-        return ;
+        return $"{_street} {_city}, {_state} {_country}";
+    }
+
+    public bool GetCountry()
+    {
+        if (_country == "USA")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
