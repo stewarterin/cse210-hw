@@ -6,14 +6,13 @@ class Program
     {
         Reference r1 = new Reference("John", 3, 16);
 
-        Scripture s1 = new Scripture(r1, "scripture");
-        
+        Scripture s1 = new Scripture(r1, "For God so loved the world that he gave his only begotten Son that whosoever believeth in him should not perish but have everlasting life.");
+
         while (s1.IsCompletelyHidden() == false)
         {
             Console.WriteLine("Welcome to the Scripture Memorizer Program!");
             Console.WriteLine("");
-            Console.WriteLine("John 3:16 God so loved the world that he gave his only begotten Son that whosoever believeth in him should not perish but have everlasting life.");
-            // Console.WriteLine(s1.GetText());
+            Console.WriteLine(s1.GetText());
             Console.WriteLine("");
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
 
