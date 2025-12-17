@@ -13,7 +13,7 @@ class Program
         v1.AddComment(c1);
         Comment c3 = new Comment("Bob Wright", "Great work, man.");
         v1.AddComment(c3);
-        v1.DisplayVideoDetails();
+        _videos.Add(v1);
 
         Video v2 = new Video("Funniest Cat Videos", "Heather Mayer", 1200);
         Comment c4 = new Comment("Roger Loftis", "Hilarious!");
@@ -22,7 +22,7 @@ class Program
         v2.AddComment(c5);
         Comment c6 = new Comment("Juan Martinez", "So funny!");
         v2.AddComment(c6);
-        v2.DisplayVideoDetails();
+        _videos.Add(v2);
         
         Video v3 = new Video("Hidden Gems in the Treasure Valley", "Maria Orozco", 1200);
         Comment c7 = new Comment("Bella Brown", "Love it!");
@@ -31,6 +31,13 @@ class Program
         v3.AddComment(c8);
         Comment c9 = new Comment("Callie Meyet", "Best video!");
         v3.AddComment(c9);
-        v3.DisplayVideoDetails();
+        Comment c10 = new Comment("Rachel Ranjel", "Woah, great list.");
+        v3.AddComment(c10);
+        _videos.Add(v3);
+
+        foreach (Video video in _videos)
+        {
+            video.DisplayVideoDetails();
+        }
     }
 }
