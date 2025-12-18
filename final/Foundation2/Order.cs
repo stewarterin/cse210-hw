@@ -5,13 +5,18 @@ public class Order
     private List<Product> _products = new List<Product>();
     private Customer _customer;
 
-    public int GetCost()
+    public Order(Customer customer)
     {
-        int _finalCost = 0;
+        _customer = customer;
+    }
+
+    public double GetCost()
+    {
+        double _finalCost = 0;
         
         foreach (Product product in _products)
         {
-            product.GetTotalCost();
+            _finalCost += product.GetTotalCost();
         }
 
         if (_customer.InUSA() == true)
@@ -32,11 +37,15 @@ public class Order
 
     public void GetShipLabel()
     {
-
+        Console.WriteLine($"{_customer.GetName()}");
+        Console.WriteLine($"{_customer.GetAddress()}");
     }
 
     public void GetPackLabel()
     {
-
+        foreach (Product product in _products)
+        {
+            Console.WriteLine($"Product: {product.GetProductName()} - Id: {product.GetId()}");
+        }
     }
 }
