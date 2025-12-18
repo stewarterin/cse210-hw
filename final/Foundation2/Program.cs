@@ -11,5 +11,10 @@ class Program
         Address a2 = new Address("91 Bird Ave", "Toronto", "ON", "CANADA");
         Console.WriteLine(a2.DisplayAddress());
         Console.WriteLine(a2.GetCountry());
+
+        Customer c1 = new Customer("Erin Stewart", a1);
+        Console.WriteLine(c1.InUSA());
+        Console.WriteLine(c1.GetName());
+        Console.WriteLine(c1.GetAddress());
     }
 }
