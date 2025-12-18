@@ -16,5 +16,10 @@ class Program
         Console.WriteLine(c1.InUSA());
         Console.WriteLine(c1.GetName());
         Console.WriteLine(c1.GetAddress());
+
+        Product p1 = new Product("Soap", 883, 2.50, 3);
+        Console.WriteLine(p1.GetTotalCost());
+        Console.WriteLine(p1.GetProductName());
+        Console.WriteLine(p1.GetId());
     }
 }
