@@ -1,11 +1,16 @@
 public class Customer
 {
     private string _customerName;
-    private string _address;
+    private Address _address;
 
-    public Customer(string name, string address)
+    public Customer(string name, Address address)
     {
         _customerName = name;
         _address = address;
+    }
+
+    public bool InUSA()
+    {
+        return _address.GetCountry(); 
     }
 }
