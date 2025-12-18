@@ -13,4 +13,15 @@ public class Customer
     {
         return _address.GetCountry(); 
     }
+
+    public string GetName()
+    {
+        return _customerName;
+
+    }
+
+    public string GetAddress()
+    {
+        return _address.DisplayAddress();
+    }
 }
